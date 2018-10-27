@@ -2,7 +2,7 @@
 import sys
 import os.path
 from colored import fg, bg, attr
-from terminaltables import AsciiTable
+from terminaltables import SingleTable
 
 # Total benefit
 totalBenefit = 0
@@ -78,5 +78,5 @@ for file in files:
 
 tableData.append(TableFormat.getTotalFormat(totalBenefit))
 
-table = AsciiTable(tableData)
+table = SingleTable(tableData, "%sResults%s" % (fg("yellow"), attr(0)))
 print("\n" + table.table + "\n")
