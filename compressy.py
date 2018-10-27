@@ -22,7 +22,7 @@ class Compression:
     def compressFile(file):
         # Validate file path
         if os.path.isfile(file) != True:
-            print(fg("red") + "Error: %s does not exist." % file + attr(0))
+            print(fg("red") + "Error: file %s does not exist." % file + attr(0))
             return
 
         content = open(file, "rb").read()
