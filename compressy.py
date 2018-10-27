@@ -12,11 +12,12 @@ class TableFormat:
         return [os.path.basename(filename),
             "%s bytes" % len(content),
             "%s bytes" % len(contentCompressed),
-            "%s %s %s bytes" % (bg("white") + fg("black"), benefit, attr(0))]
+            "%s %s %s bytes" % (bg("white") + fg("black"), benefit, attr(0)),
+            "%i %%" % (100 - (benefit / len(content) * 100))]
 
     def getTotalFormat(totalBenefit):
         return ["%sTotal%s" % (attr(1), attr(0)),
-            "", "", "%s %s %s bytes" % (bg("blue") + fg("white"), totalBenefit, attr(0))]
+            "", "", "%s %s %s bytes" % (bg("blue") + fg("white"), totalBenefit, attr(0)), ""]
 
 class Compression:
     def compressFile(file):
@@ -50,7 +51,7 @@ checkArgs()
 
 # Define initial table data
 tableData = [
-    ["Filename", "Before", "After", "Benefit"]
+    ["Filename", "Before", "After", "Benefit", "Ratio"]
 ]
 
 # Determine file paths
