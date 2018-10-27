@@ -57,6 +57,7 @@ tableData = [
 files = sys.argv
 files.pop(0)
 
+# User preference of compression algorithm
 if files[0] == "--gzip":
     files.pop(0)
     ext = "gz"
