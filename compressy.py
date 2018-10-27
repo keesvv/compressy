@@ -59,11 +59,13 @@ files.pop(0)
 
 if files[0] == "--gzip":
     files.pop(0)
-    compression = "gzip"
     ext = "gz"
     import gzip as compress
+elif files[0] == "--bzip":
+    files.pop(0)
+    ext = "bz2"
+    import bz2 as compress
 else:
-    compression = "lzma"
     ext = "xz"
     import lzma as compress
 
