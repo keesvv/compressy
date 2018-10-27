@@ -9,7 +9,7 @@ totalBenefit = 0
 
 class TableFormat:
     def getFormat(filename, content, contentCompressed, benefit):
-        return [filename,
+        return [os.path.basename(filename),
             "%s bytes" % len(content),
             "%s bytes" % len(contentCompressed),
             "%s %s %s bytes" % (bg("white") + fg("black"), benefit, attr(0))]
